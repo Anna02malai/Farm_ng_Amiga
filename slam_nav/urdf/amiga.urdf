@@ -1,0 +1,278 @@
+<?xml version="1.0"?>
+<robot name="amiga_robot">
+
+  <!-- Base link (center of robot frame) -->
+  <link name="base_link">
+    <!-- Front beam (left-right across front) -->
+    <visual>
+      <origin xyz="0.45 0 0.0" rpy="0 0 1.5708"/>
+      <geometry>
+        <box size="0.65 0.05 0.05"/>
+      </geometry>
+      <material name="black">
+        <color rgba="0.1 0.1 0.1 1"/>
+      </material>
+    </visual>
+    
+    <!-- Rear beam -->
+    <visual>
+      <origin xyz="-0.45 0 0.0" rpy="0 0 1.5708"/>
+      <geometry>
+        <box size="0.65 0.05 0.05"/>
+      </geometry>
+      <material name="black"/>
+    </visual>
+    
+    <!-- Left longitudinal beam -->
+    <visual>
+      <origin xyz="0 0.325 0.0" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.9 0.05 0.05"/>
+      </geometry>
+      <material name="black"/>
+    </visual>
+    
+    <!-- Right longitudinal beam -->
+    <visual>
+      <origin xyz="0 -0.325 0.0" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.9 0.05 0.05"/>
+      </geometry>
+      <material name="black"/>
+    </visual>
+    
+    <!-- Center cross beam -->
+    <visual>
+      <origin xyz="0 0 0.0" rpy="0 0 1.5708"/>
+      <geometry>
+        <box size="0.65 0.05 0.05"/>
+      </geometry>
+      <material name="black"/>
+    </visual>
+  </link>
+
+
+  <!-- Front Left Wheel Assembly -->
+  <link name="front_left_wheel">
+    <visual>
+      <origin xyz="0 0 0" rpy="1.5708 0 0"/>
+      <geometry>
+        <mesh filename="package://fast_lio/meshes/wheel_assembly.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="mixed">
+        <color rgba="0.6 0.6 0.6 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="1.5708 0 0"/>
+      <geometry>
+        <cylinder radius="0.165" length="0.12"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="10"/>
+      <inertia ixx="0.15" ixy="0" ixz="0" iyy="0.15" iyz="0" izz="0.2"/>
+    </inertial>
+  </link>
+  
+  <joint name="front_left_wheel_joint" type="continuous">
+    <parent link="base_link"/>
+    <child link="front_left_wheel"/>
+    <origin xyz="0.4 0.325 0.0" rpy="0 0 0"/>
+    <axis xyz="0 1 0"/>
+  </joint>
+
+
+  <!-- Front Right Wheel Assembly -->
+  <link name="front_right_wheel">
+    <visual>
+      <origin xyz="0 0 0" rpy="1.5708 0 0"/>
+      <geometry>
+        <mesh filename="package://fast_lio/meshes/wheel_assembly.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="mixed"/>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="1.5708 0 0"/>
+      <geometry>
+        <cylinder radius="0.165" length="0.12"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="10"/>
+      <inertia ixx="0.15" ixy="0" ixz="0" iyy="0.15" iyz="0" izz="0.2"/>
+    </inertial>
+  </link>
+  
+  <joint name="front_right_wheel_joint" type="continuous">
+    <parent link="base_link"/>
+    <child link="front_right_wheel"/>
+    <origin xyz="0.4 -0.325 0.0" rpy="0 0 0"/>
+    <axis xyz="0 1 0"/>
+  </joint>
+
+
+  <!-- Rear Left Wheel Assembly -->
+  <link name="rear_left_wheel">
+    <visual>
+      <origin xyz="0 0 0" rpy="1.5708 0 0"/>
+      <geometry>
+        <mesh filename="package://fast_lio/meshes/wheel_assembly.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="mixed"/>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="1.5708 0 0"/>
+      <geometry>
+        <cylinder radius="0.165" length="0.12"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="10"/>
+      <inertia ixx="0.15" ixy="0" ixz="0" iyy="0.15" iyz="0" izz="0.2"/>
+    </inertial>
+  </link>
+  
+  <joint name="rear_left_wheel_joint" type="continuous">
+    <parent link="base_link"/>
+    <child link="rear_left_wheel"/>
+    <origin xyz="-0.4 0.325 0.0" rpy="0 0 0"/>
+    <axis xyz="0 1 0"/>
+  </joint>
+
+
+  <!-- Rear Right Wheel Assembly -->
+  <link name="rear_right_wheel">
+    <visual>
+      <origin xyz="0 0 0" rpy="1.5708 0 0"/>
+      <geometry>
+        <mesh filename="package://fast_lio/meshes/wheel_assembly.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="mixed"/>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="1.5708 0 0"/>
+      <geometry>
+        <cylinder radius="0.165" length="0.12"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="10"/>
+      <inertia ixx="0.15" ixy="0" ixz="0" iyy="0.15" iyz="0" izz="0.2"/>
+    </inertial>
+  </link>
+  
+  <joint name="rear_right_wheel_joint" type="continuous">
+    <parent link="base_link"/>
+    <child link="rear_right_wheel"/>
+    <origin xyz="-0.4 -0.325 0.0" rpy="0 0 0"/>
+    <axis xyz="0 1 0"/>
+  </joint>
+
+
+  <!-- ========== LIDAR MOUNTING STRUCTURE ========== -->
+  
+  <!-- Vertical mounting beam extending upward from rear crossbeam -->
+  <link name="lidar_vertical_mount">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.05 0.05 0.45"/>
+      </geometry>
+      <material name="black">
+        <color rgba="0.1 0.1 0.1 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.05 0.05 0.45"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="1.5"/>
+      <inertia ixx="0.02" ixy="0" ixz="0" iyy="0.02" iyz="0" izz="0.001"/>
+    </inertial>
+  </link>
+  
+  <joint name="rear_beam_to_lidar_mount" type="fixed">
+    <parent link="base_link"/>
+    <child link="lidar_vertical_mount"/>
+    <origin xyz="-0.45 0 0.225" rpy="0 0 0"/>
+  </joint>
+  
+  <!-- Horizontal mounting plate at top of vertical beam -->
+  <link name="lidar_mount_plate">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <cylinder radius="0.08" length="0.015"/>
+      </geometry>
+      <material name="mount_plate">
+        <color rgba="0.3 0.3 0.3 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <cylinder radius="0.08" length="0.015"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="0.3"/>
+      <inertia ixx="0.001" ixy="0" ixz="0" iyy="0.001" iyz="0" izz="0.001"/>
+    </inertial>
+  </link>
+  
+  <joint name="vertical_mount_to_plate" type="fixed">
+    <parent link="lidar_vertical_mount"/>
+    <child link="lidar_mount_plate"/>
+    <origin xyz="0 0 0.225" rpy="0 0 0"/>
+  </joint>
+
+
+  <!-- ========== REAL MID-360 LIDAR SENSOR ========== -->
+  <link name="lidar_link">
+    <!-- Real inertial properties from MID-360 CAD -->
+    <inertial>
+      <origin xyz="0.000199568207551269 -0.00388540916609674 -6.3423428515155E-06" rpy="0 0 0"/>
+      <mass value="0.14188726736057"/>
+      <inertia 
+        ixx="4.17976993084157E-05"
+        ixy="-3.05313915244018E-07"
+        ixz="5.48662674188819E-09"
+        iyy="6.87997791000628E-05"
+        iyz="-4.59347653576492E-10"
+        izz="4.50773096258266E-05"/>
+    </inertial>
+    
+    <!-- Visual: MID-360 mesh -->
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://fast_lio/meshes/lidar_link.STL"/>
+      </geometry>
+      <material name="lidar_gray">
+        <color rgba="0.792 0.820 0.933 1"/>
+      </material>
+    </visual>
+    
+    <!-- Collision: MID-360 mesh (or simplified) -->
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <!-- Use actual mesh for accurate collision -->
+        <mesh filename="package://fast_lio/meshes/lidar_link.STL"/>
+        <!-- OR use simplified collision (faster simulation): -->
+        <!-- <cylinder radius="0.05" length="0.08"/> -->
+      </geometry>
+    </collision>
+  </link>
+  
+  <joint name="lidar_joint" type="fixed">
+    <parent link="lidar_mount_plate"/>
+    <child link="lidar_link"/>
+    <origin xyz="0 0 0.05" rpy="0 0 0"/>
+  </joint>
+
+</robot>

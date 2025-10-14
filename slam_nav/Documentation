@@ -1,0 +1,44 @@
+Terminal 1 : To launch the Lidar Msgs
+	
+	ros2 launch livox_ros_driver2 msg_MID360_launch.py
+	
+Terminal 2 : To Start Mapping
+
+	ros2 launch fast_lio mapping.launch.py config_file:=mid360.yaml
+	
+Terminal 3 : To start converting the 3D Point cloud to 2D laserscan
+
+	ros2 launch fl_nav2_helper pc2l.launch.py
+
+Terminal 4 : To start publishing TF"s
+
+	ros2 launch fl_nav2_helper relay_topics.launch.py
+
+Terminal 5:  To start slam tool box to create a 2D map
+
+	ros2 launch slam_toolbox online_async_launch.py slam_params_file:=/home/user/AMIGA_Robot/ws_navigation/src/fl_nav2_helper/config/mapper_params_online_async.yaml
+
+Terminal 6: To start the cmd_vel publishing for Amiga Robot
+
+	ros2 launch slam_nav amiga.launch.py
+	
+Terminal 7: To bringup the 2D Map and start nav2
+
+	ros2 launch nav2_bringup bringup_launch.py use_sim_time:=False autostart:=True map:=/home/user/AMIGA_Robot/fast_lio_ws/Maps/lab.yaml params_file:=/home/user/AMIGA_Robot/ws_navigation/src/fl_nav2_helper/config/nav2_params_humble.yaml
+	
+	
+Additional Commands/ Terninl
+
+Command 1: To save the 3D map
+	ros2 service call /map_save std_srvs/srv/Trigger
+	
+Command 2: To save the  2D Map
+	ros2 run nav2_map_server map_saver_cli -f <map_name>
+
+Command 3: To start rviz
+	rviz2
+	
+	set the respective config for respective tasks
+	1) slam navigation - go to nav2_bringup rviz and open nav2_default_view_rviz_config
+	 
+	
