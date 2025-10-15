@@ -6,11 +6,11 @@
     text-align: justify;
   }
 
- img, video, table {
+ /* img, video, table {
   display: block;
   margin-left: auto;
   margin-right: auto;
-} 
+}  */
 
 </style>
 
@@ -84,11 +84,11 @@ The following **[Github Repository](https://github.com/Anna02malai/Farm_ng_Amiga
    - The following Video [Slam_1.mp4](Media/Slam_1.mp4) is the demonstration of the SLAM navigation of the Amiga Robot. 
 
       <!-- {% raw %} -->
-      <!-- <div align="center"> -->
+      <div align="center">
       <video width="640" height="360" controls >
          <source src="Media/Slam_1.mp4" type="video/mp4">
          Your browser does not support the video tag.
       </video>
-      <!-- </div> -->
+      </div>
       <!-- {% endraw %} --> 
 
