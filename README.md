@@ -6,9 +6,11 @@
     text-align: justify;
   }
 
-/* img, video, table {
-  max-width: 100%;
-} */
+ img, video, table {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+} 
 
 </style>
 
@@ -81,12 +83,12 @@ The following Repository contains the description, video recordings, ROS2 packag
 ### Media: 
    - The following Video [Slam_1.mp4](Media/Slam_1.mp4) is the demonstration of the SLAM navigation of the Amiga Robot. 
 
-      <!-- - The following video demonstrates the manual operation of the Rivulet robot via joystick on the Centre Pivot Irrigation system:
-            
       <!-- {% raw %} -->
-      <video width="640" height="360" controls>
+      <!-- <div align="center"> -->
+      <video width="640" height="360" controls >
          <source src="Media/Slam_1.mp4" type="video/mp4">
          Your browser does not support the video tag.
       </video>
+      <!-- </div> -->
       <!-- {% endraw %} --> 
 
