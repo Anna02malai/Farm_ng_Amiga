@@ -6,25 +6,17 @@ Terminal 2 : To Start Mapping
 
 	ros2 launch fast_lio mapping.launch.py config_file:=mid360.yaml
 	
-Terminal 3 : To start converting the 3D Point cloud to 2D laserscan
+Terminal 3 : To start converting the 3D Point cloud to 2D laserscan and start publishing TF's and start publishing velocity commands to the Amiga
 
-	ros2 launch fl_nav2_helper pc2l.launch.py
+	ros2 launch slam_nav slam_nav_helper.launch.py
 
-Terminal 4 : To start publishing TF"s
+Terminal 4:  To start slam tool box to create a 2D map
 
-	ros2 launch fl_nav2_helper relay_topics.launch.py
-
-Terminal 5:  To start slam tool box to create a 2D map
-
-	ros2 launch slam_toolbox online_async_launch.py slam_params_file:=/home/user/AMIGA_Robot/ws_navigation/src/fl_nav2_helper/config/mapper_params_online_async.yaml
-
-Terminal 6: To start the cmd_vel publishing for Amiga Robot
-
-	ros2 launch slam_nav amiga.launch.py
+	ros2 launch slam_toolbox online_async_launch.py slam_params_file:=/home/user/AMIGA_Robot/ws_navigation/src/slam_nav/config/mapper_params_online_async.yaml
 	
-Terminal 7: To bringup the 2D Map and start nav2
+Terminal 5: To bringup the 2D Map and start nav2
 
-	ros2 launch nav2_bringup bringup_launch.py use_sim_time:=False autostart:=True map:=/home/user/AMIGA_Robot/fast_lio_ws/Maps/lab.yaml params_file:=/home/user/AMIGA_Robot/ws_navigation/src/fl_nav2_helper/config/nav2_params_humble.yaml
+	ros2 launch nav2_bringup bringup_launch.py use_sim_time:=False autostart:=True map:=/home/user/AMIGA_Robot/slam_nav/Maps/lab.yaml params_file:=/home/user/AMIGA_Robot/ws_navigation/src/slam_nav/config/nav2_params_humble.yaml
 	
 	
 Additional Commands/ Terninl
@@ -38,7 +30,8 @@ Command 2: To save the  2D Map
 Command 3: To start rviz
 	rviz2
 	
-	set the respective config for respective tasks
+set the respective config for respective tasks
 	1) slam navigation - go to nav2_bringup rviz and open nav2_default_view_rviz_config
+	2) voxel layer navigation - open Amiga_slam.rviz from rviz foler from slam_nav pkg for 3D voxel layer slam navigation visualization.
 	 
 	
