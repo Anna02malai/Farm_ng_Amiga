@@ -86,7 +86,7 @@ The following **[Github Repository](https://github.com/Anna02malai/Farm_ng_Amiga
       <!-- {% raw %} -->
       <div align="center">
       <video width="640" height="360" controls >
-         <source src="Media/Slam_1.mp4" type="video/mp4">
+         <source src="Media/Slam_Navigation.mp4" type="video/mp4">
          Your browser does not support the video tag.
       </video>
       </div>

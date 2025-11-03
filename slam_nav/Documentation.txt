@@ -1,0 +1,37 @@
+Terminal 1 : To launch the Lidar Msgs
+	
+	ros2 launch livox_ros_driver2 msg_MID360_launch.py
+	
+Terminal 2 : To Start Mapping
+
+	ros2 launch fast_lio mapping.launch.py config_file:=mid360.yaml
+	
+Terminal 3 : To start converting the 3D Point cloud to 2D laserscan and start publishing TF's and start publishing velocity commands to the Amiga
+
+	ros2 launch slam_nav slam_nav_helper.launch.py
+
+Terminal 4:  To start slam tool box to create a 2D map
+
+	ros2 launch slam_toolbox online_async_launch.py slam_params_file:=/home/user/AMIGA_Robot/ws_navigation/src/slam_nav/config/mapper_params_online_async.yaml
+	
+Terminal 5: To bringup the 2D Map and start nav2
+
+	ros2 launch nav2_bringup bringup_launch.py use_sim_time:=False autostart:=True map:=/home/user/AMIGA_Robot/slam_nav/Maps/lab.yaml params_file:=/home/user/AMIGA_Robot/ws_navigation/src/slam_nav/config/nav2_params_humble.yaml
+	
+	
+Additional Commands/ Terninl
+
+Command 1: To save the 3D map
+	ros2 service call /map_save std_srvs/srv/Trigger
+	
+Command 2: To save the  2D Map
+	ros2 run nav2_map_server map_saver_cli -f <map_name>
+
+Command 3: To start rviz
+	rviz2
+	
+set the respective config for respective tasks
+	1) slam navigation - go to nav2_bringup rviz and open nav2_default_view_rviz_config
+	2) voxel layer navigation - open Amiga_slam.rviz from rviz foler from slam_nav pkg for 3D voxel layer slam navigation visualization.
+	 
+	
