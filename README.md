@@ -81,12 +81,12 @@ The following **[Github Repository](https://github.com/Anna02malai/Farm_ng_Amiga
 **Step 5:**  Then refer the commands from [Documentation.txt](slam_nav/Documentation) and run the following commands as per your scenario nad needs.
 
 ### Media: 
-   - The following Video [Slam_1.mp4](Media/Slam_1.mp4) is the demonstration of the SLAM navigation of the Amiga Robot. 
+   - The following Video [SLAM_Navigation.mp4](Media/SLAM_Navigation.mp4) is the demonstration of the SLAM navigation of the Amiga Robot. 
 
       <!-- {% raw %} -->
       <div align="center">
       <video width="640" height="360" controls >
-         <source src="Media/Slam_Navigation.mp4" type="video/mp4">
+         <source src="Media/SLAM_Navigation.mp4" type="video/mp4">
          Your browser does not support the video tag.
       </video>
       </div>
