@@ -40,7 +40,7 @@ The following **[Github Repository](https://github.com/Anna02malai/Farm_ng_Amiga
 ### Package Files:
 
 1) [config](slam_nav/config) - The folder contains the config and parameter files for Lidar, Slam_tool Box and Nav_2 Bringup.
-   - [mid_360.yaml]() - The file contains the config and parameters for the livox_ros_driver and fast_lio 
+   - [MID360_config.json](slam_nav/config/MID360_config.json) - The file contains the config and parameters for the livox_ros_driver and fast_lio 
    - [nav2_params_humble.yaml](slam_nav/config/nav2_params_humble.yaml) - This a parameter file for Nav_2 Bring up stack. 
    - [nav2_params_humble_voxel.yaml](slam_nav/config/nav2_params_humble_voxel.yaml) - This a parameter file with the additional stvl layer (spatio-voxel temporal layer) for Nav_2 Bring up stack. 
 
