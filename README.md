@@ -16,10 +16,10 @@
 
 <!-- #################################################################################################################################################################################### -->
 
-# Ag-Cypher Lab (UD) <img src="Media/UD_logo.jpg" width="25" height="25">
+# Ag-CyPhER Lab (UD) <img src="Media/UD_logo.jpg" width="25" height="25">
 ## Amiga Robot - [Bonsai Robotics (Farm_ng)](https://farm-ng.com)
 
-The following **[Github Repository](https://github.com/Anna02malai/Farm_ng_Amiga)** contains the description, video recordings, ROS2 package files, installation steps and documentation of the SLAM Navigation of the Amiga robot. This work done in the Ag-Cypher Lab at University of Delaware by integrating the the MID-360 Livox Lidar to the existing Amiga Robot (Base Model). 
+The following **[Github Repository](https://github.com/Anna02malai/Farm_ng_Amiga)** contains the description, video recordings, ROS2 package files, installation steps and documentation of the SLAM Navigation of the Amiga robot. This work done in the Ag-CyPhER Lab at University of Delaware by integrating the the MID-360 Livox Lidar to the existing Amiga Robot (Base Model). 
 
 ### Problem Statement:
 
